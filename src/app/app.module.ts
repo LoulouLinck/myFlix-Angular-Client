@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     MovieCardComponent, 
     WelcomePageComponent, 
     UserProfileComponent, 
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatSnackBarModule,
     MatIconModule,
+    MatToolbarModule,
     MatListModule,
 
     RouterModule.forRoot(appRoutes),
