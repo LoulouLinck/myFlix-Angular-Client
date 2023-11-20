@@ -1,4 +1,22 @@
-<h1>Update you profile</h1>
+<div class="profile-container">
+    <div class="info-container ">
+        <div class="info">
+            <h1><span>{{userData.Username}}</span>'s profile </h1>
+<br>
+            <h3>Favourite Movies</h3>
+            <div *ngIf="favoriteMovies.length === 0">
+                <p>Your list is empty</p>
+            </div>
+        </div>
+        <mat-list>
+            <mat-list-item *ngFor="let movie of favoriteMovies" class="image-container">
+                <img matListItemAvatar src="{{movie.ImagePath}}" />
+                <span matListItemTitle>{{movie.Title}}</span>
+            </mat-list-item>
+        </mat-list>
+    </div>
+
+<h3>Update your profile</h3>
 
 <br>
 
@@ -9,8 +27,7 @@
 
 <mat-form-field>
     <mat-label>Password</mat-label>
-    <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password"
-        required>
+    <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password">
 </mat-form-field>
 
 <mat-form-field>
@@ -32,6 +49,3 @@
 <button mat-raised-button class="profileButtons" (click)="deleteUser()">
     Delete Account
 </button>
-</form>
-
-</div>
