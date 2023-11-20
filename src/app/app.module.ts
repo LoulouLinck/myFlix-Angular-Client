@@ -26,6 +26,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { GenreInfoComponent } from './genre-info/genre-info.component';
+import { DirectorInfoComponent } from './director-info/director-info.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     UserProfileComponent, 
     NavigationComponent, 
     GenreInfoComponent, 
+    DirectorInfoComponent, 
   ],
   imports: [
     BrowserModule,
