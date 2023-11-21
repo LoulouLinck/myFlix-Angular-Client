@@ -35,3 +35,23 @@ getMovies(): void {
   }
 
     // opens director-info component
+    openDirectorInfo(Director: any): void {
+      console.log('Director Object:', Director);
+      this.dialog.open(DirectorInfoComponent, {
+        data: {
+          Name: Director.Name,
+          Bio: Director.Bio,
+          Birth: Director.Birth
+        }
+      });
+    }
+  
+      // opens movie-info component
+  openMovieInfo(Title: string, Description: string): void {
+    this.dialog.open(MovieInfoComponent, {
+      data: {
+        Title: Title,
+        Description: Description
+      }
+    });
+  }
