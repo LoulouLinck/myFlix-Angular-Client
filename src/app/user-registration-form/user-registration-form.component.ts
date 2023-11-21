@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// You'll use this import to close the dialog on success
+// closes the dialog on success
 import { MatDialogRef } from '@angular/material/dialog';
 
-// This import brings in the API calls we created in 6.2
+// brings in API calls created in fetch-api0data0service.ts (EX 6.2)
 import { FetchApiDataService } from '../fetch-api-data.service';
 
-// This import is used to display notifications back to the user
+// displays notifications to user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
@@ -27,7 +27,7 @@ constructor(
 ngOnInit(): void {
 }
 
-// This is the function responsible for sending the form inputs to the backend
+// function responsible for sending form inputs to backend
 registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
   // Logic for successful user registration
