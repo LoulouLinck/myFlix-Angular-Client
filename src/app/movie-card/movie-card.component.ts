@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-import { GenreInfoComponent } from '../genre-info/genre-info.component';
-import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { GenreInfoComponent } from '../genre-info/genre-info.component';
+import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { MovieInfoComponent } from '../movie-info/movie-info.component';
 
 @Component({
@@ -29,7 +30,6 @@ getMovies(): void {
       return this.movies;
     });
   }
-}
 
   // opens genres-info component
   openGenreInfo(Genres: any[]): void {
@@ -63,3 +63,4 @@ getMovies(): void {
       }
     });
   }
+}
