@@ -1,1 +1,9 @@
-<p>genre-info works!</p>
+<mat-dialog-content role="dialog">
+    <div *ngFor="let genre of data.genres">
+      <h4>{{ genre.Name }}</h4>
+      <div class="genreDescription">{{ genre.Description }}</div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions class="genreButtonContainer">
+    <button mat-raised-button mat-dialog-close aria-label="Close Dialog">Close</button>
+  </mat-dialog-actions>
