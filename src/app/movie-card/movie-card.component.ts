@@ -14,9 +14,12 @@ import { MovieInfoComponent } from '../movie-info/movie-info.component';
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  constructor(public fetchApiData: FetchApiDataService,
-              public snackbar: MatSnackBar,
-              public dialog: MatDialog) { }
+
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public snackbar: MatSnackBar,
+    public dialog: MatDialog
+  ) { }
 
 ngOnInit(): void {
   this.getMovies();
@@ -32,8 +35,8 @@ getMovies(): void {
   }
 
   // opens genres-info component
-  openGenreInfo(Genres: any[]): void {
-    console.log('Genre Object:', Genre);
+  openGenreInfo(genres: any[]): void {
+    // console.log('Genre Object:', Genre);
     this.dialog.open(GenreInfoComponent, {
       data: {
         Genre: Genre.Name,
@@ -43,8 +46,8 @@ getMovies(): void {
   }
 
     // opens director-info component
-    openDirectorInfo(Director: any): void {
-      console.log('Director Object:', Director);
+    openDirectorInfo(directors: any): void {
+      // console.log('Director Object:', Director);
       this.dialog.open(DirectorInfoComponent, {
         data: {
           Name: Director.Name,
@@ -63,4 +66,40 @@ getMovies(): void {
       }
     });
   }
+
+   // adds or deletes movie to/from favourites
+   toggleFavorite(movie: any): void {
+    // Toggle the favourite status of the movie
+    if (this.isMovieFavorite(movie)) {
+      // deletes movie from favorites locally
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      user.FavoriteMovies = user.FavoriteMovies.filter((id: string) => id !== movie._id);
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      // adds movie to favourites locally
+      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      user.FavoriteMovies.push(movie._id);
+      localStorage.setItem('user', JSON.stringify(user));
+  
+      // Add movie to favourites in backend
+      this.fetchApiData.addFavoriteMovie(movie._id).subscribe(
+        () => {
+          console.log('Movie added to favorites successfully.');
+        },
+        (error) => {
+          console.error('Error adding movie to favorites:', error);
+        }
+      );
+    }
+  
+    // updates local 'isFavorite' property
+    movie.isFavorite = !this.isMovieFavorite(movie);
+  }
+  
+  // checks if a movie is in favourites
+  isMovieFavorite(movie: any): boolean {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return user.FavoriteMovies && user.FavoriteMovies.includes(movie._id);
+  }
+  
 }
