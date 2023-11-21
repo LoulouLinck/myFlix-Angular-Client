@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service'
+import { Component, OnInit, Inject } from '@angular/core';
+import { FetchApiDataService } from '../fetch-api-data.service';
+import { GenreInfoComponent } from '../genre-info/genre-info.component';
+import { DirectorInfoComponent } from '../director-info/director-info.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MovieInfoComponent } from '../movie-info/movie-info.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,7 +13,9 @@ import { FetchApiDataService } from '../fetch-api-data.service'
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  constructor(public fetchApiData: FetchApiDataService) { }
+  constructor(public fetchApiData: FetchApiDataService,
+              public snackbar: MatSnackBar,
+              public dialog: MatDialog) { }
 
 ngOnInit(): void {
   this.getMovies();
@@ -23,6 +30,7 @@ getMovies(): void {
     });
   }
 }
+
   // opens genres-info component
   openGenreInfo(Genres: any[]): void {
     console.log('Genre Object:', Genre);
