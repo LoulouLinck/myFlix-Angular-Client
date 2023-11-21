@@ -57,7 +57,7 @@ export class FetchApiDataService {
   }
 
   // Get director
-  getOneDirector(Name: string): Observable<any> {
+  getOneDirector(directorName: string): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
       .get(apiUrl + 'movies/directors/' + directorName, { //or Name?
