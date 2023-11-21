@@ -15,5 +15,7 @@ export class GenreInfoComponent implements OnInit {
     }
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    console.log(this.data.genres);
+   }
 }
