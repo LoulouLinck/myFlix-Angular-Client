@@ -25,8 +25,9 @@
     ]
   },
   "typedocOptions": {
-    "entryPoints": ["src/main.ts"],
-    "out": "docs"
+    "entryPoints": ["src/"],
+    "out": "docs",
+    "entryPointStrategy": "expand"
 },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
