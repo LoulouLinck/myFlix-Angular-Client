@@ -25,7 +25,7 @@
     ]
   },
   "typedocOptions": {
-    "entryPoints": ["src/index.ts"],
+    "entryPoints": ["src/main.ts"],
     "out": "docs"
 },
   "angularCompilerOptions": {
