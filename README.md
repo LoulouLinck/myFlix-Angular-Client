@@ -1,27 +1,93 @@
-# MyFlixAngularClient
+# 📖 myFlix-Angular-client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
+> The present repository is the client-side app generated with Angular that connects with a movie database: <a href="https://github.com/LoulouLinck/movie_api">movie_api.</a>
+> Together they form <a href="https://cineflixxx.netlify.app/">CineFlix</a>, a responsive single-page application allowing user to find information about movies and bookmark them in a personal list. 
 
-## Development server
+## Objective
+Using Angular, build the client-side of an app based on its existing server-side code (REST API and database).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<!-- ![app-screenshot](.//src/components/img/Screenshot_Home_CineFlix.png) -->
 
-## Code scaffolding
+## Project Link
+**Link to CineFlix App:** 
+<br>
+**Link to API:** https://github.com/LoulouLinck/movie_api
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠 Built With
+Angular CLI version 16.2.10
+### Tech Stack
 
-## Build
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>MongoDB (NoSQL database for storing movie and user data)</li>
+    <li>Express (Backend framework for creating RESTful APIs and server-side functionalities)</li>
+    <li>Angular (Frontend web framework for building the user interface and interactions)</li>
+    <li>Node.js (backend JavaScript runtime for running the development server.)</li>
+    <br>
+    <li>TypeScript (Superset of JavaScript used for developing Angular applications)</li>
+     <li>Angular Material: UI component library providing pre-built, customizable UI elements.</li>
+  </ul>
+</details>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://pokeapi.co/">MongoDB Atlas Database</a></li>
+  </ul>
+</details>
 
-## Running unit tests
+ <!-- Features -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Key Features 
+ 
+- **Welcome View** with Signup / Login options
+- **Allows users to add a movie to their list of favorites**
+- User profile view to:
+  <ul>
+- Update user information
+- See their favorite movie list
+- Delete their account
+ </ul>
+ 
+- List of Movies (fetched from my own API)
 
-## Running end-to-end tests
+- **Movie Views** displaying details on:
+  - Director
+  - Genre
+  - Synopsis
+<br>
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Responsive Layout & Accessibility
 
-## Further help
+The app was tested to suit a wide spectrum of devices and with accessibility in mind.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For a clean and usable design Bootstrap was implemented to the app. Thanks to this framework the layout of the library is set with optimal responsivity for a pleasant experience regardless of screen size.
+
+<!-- ## Credits
+
+<a href="https://www.flaticon.com/free-icons/more" title="more icons">More icons created by JessiGue - Flaticon</a>) was used for logoss -->
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started 
+
+<br>
+`npm install -g @angular/cli@16.2.10`
+<br>
+Run ng new app-name to create a new app.
+Run ng generate component component-name to generate a new component.
+<br>
+Run `ng serve --open` to prompt Angular build the project and navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+<br>
+Open src/app/app.module.ts and add import { HttpClientModule } from '@angular/common/http';. The HttpClientModule is a simplified API for Angular applications that makes it possible for the client app to communicate with the API or server-side. After the import, add HttpClientModule in the @NgModule imports.
+
+## 👥 Author <a name="authors"></a>
+
+**Laure Lincker**
+
+- GitHub: [@LoulouLinck](https://github.com/LoulouLinck)
+
+This was a solo project guided by tutors and mentors from <a href="https://careerfoundry.com/en/courses/become-a-web-developer/">CareerFoundry.</a>
+
+<p align="right"><a href="#readme-top">back to top</a></p>
