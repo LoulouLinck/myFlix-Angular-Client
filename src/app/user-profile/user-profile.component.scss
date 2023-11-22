@@ -1,0 +1,22 @@
+div.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profileButtons {
+    background-color: #f2f2f2;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .profileButtons {
+    opacity: 80%;
+  }
+
+  span {
+    font-weight: 200;
+  }
