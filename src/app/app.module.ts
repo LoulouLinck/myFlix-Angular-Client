@@ -36,6 +36,11 @@ const appRoutes: Routes = [
   { path: 'profile', component: UserProfileComponent },
 ];
 
+/**
+ * Main module of the application.
+ * 
+ * @module
+ */
 @NgModule({
   declarations: [
     AppComponent, 
@@ -72,4 +77,8 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
 })
+
+/**
+ * The main module class that declares all the components, services, and modules used in the application.
+ */
 export class AppModule {}
