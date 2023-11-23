@@ -48,12 +48,12 @@ getMovies(): void {
    * Opens a dialog with genre details (genres-info-component).
    * @param genre 
    */
-  openGenreInfo(genres: any[]): void {
+  openGenreInfo(Genres: any): void {
     // console.log('Genre Object:', Genre);
     this.dialog.open(GenreInfoComponent, {
       data: {
-        Genre: Genre.Name,
-        Description: Genre.Description
+        Genre: Genres.Name,
+        Description: Genres.Description
       }
     });
   }
@@ -62,13 +62,13 @@ getMovies(): void {
    * Opens a dialog with director details (director-info-component).
    * @param director
    */
-    openDirectorInfo(directors: any): void {
+    openDirectorInfo(Directors: any): void {
       // console.log('Director Object:', Director);
       this.dialog.open(DirectorInfoComponent, {
         data: {
-          Name: Director.Name,
-          Bio: Director.Bio,
-          Birth: Director.Birth
+          Name: Directors.Name,
+          Bio: Directors.Bio,
+          Birth: Directors.Birth
         }
       });
     }
