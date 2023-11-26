@@ -48,12 +48,12 @@ getMovies(): void {
    * Opens a dialog with genre details (genres-info-component).
    * @param genre 
    */
-  openGenreInfo(Genres: any): void {
+  openGenreInfo(Genre: any): void {
     // console.log('Genre Object:', Genre);
     this.dialog.open(GenreInfoComponent, {
       data: {
-        Genre: Genres.Name,
-        Description: Genres.Description
+        Name: Genre.Name,
+        Description: Genre.Description
       }
     });
   }

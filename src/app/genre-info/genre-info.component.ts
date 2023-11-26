@@ -23,7 +23,8 @@ export class GenreInfoComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
-      genres: any[];
+      Name: string;
+      Description: string;
     }
   ) { }
 
@@ -31,6 +32,6 @@ export class GenreInfoComponent implements OnInit {
    * Angular's OnInit lifecycle hook. Logs the genre data for debugging.
    */
   ngOnInit(): void {
-    console.log(this.data.genres);
+    console.log(this.data);
    }
 }
