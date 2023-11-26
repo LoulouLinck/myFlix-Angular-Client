@@ -19,9 +19,9 @@ export class DirectorInfoComponent implements OnInit {
    * Constructor to inject the director data into the component.
    *
    * @param {Object} data - The director data to be displayed.
-   * @param {string} data.name - The name of the director.
+   * @param {string} data.Name - The name of the director.
    * @param {string} data.Bio - The biography of the director.
-   * @param {string} data.dateOfBirth - The director's date of birth.
+   * @param {string} data.Birth - The director's date of birth.
    */
 
     @Inject(MAT_DIALOG_DATA)
