@@ -50,7 +50,8 @@ ngOnInit(): void {
 }
 
 /**
-* Send the user login form data to the backend and handle the response.
+* Send the user login form data to the backend, stores it and handle the response.
+* User will be sent to the movie page upon successfull login
 */
 loginUser(): void {
     this.fetchApiData.userLogin(this.loginData).subscribe((data) => {
@@ -58,6 +59,7 @@ loginUser(): void {
       // Logic for successful user login goes here!
       localStorage.setItem('user', JSON.stringify(data.user));
       localStorage.setItem('token', data.token);
+      // localStorage.setItem('Username', data.user.Username)
 
       this.router.navigate(['movies']);
       
@@ -65,7 +67,11 @@ loginUser(): void {
       this.snackBar.open('Logged in', 'OK', {
         duration: 2000
       });
+    }, () => {
+      this.snackBar.open('Sorry, something went wrong. please register or try again', 'OK', {
+        duration: 4000
     });
+  })
   }
 
 }
