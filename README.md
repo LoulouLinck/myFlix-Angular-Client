@@ -9,7 +9,7 @@ Using Angular, build the client-side of an app based on its existing server-side
 <!-- ![app-screenshot](.//src/components/img/Screenshot_Home_CineFlix.png) -->
 
 ## Project Link
-**Link to CineFlix App:** 
+**Link to CineFlix App:** https://louloulinck.github.io/myFlix-Angular-Client/
 <br>
 **Link to API:** https://github.com/LoulouLinck/movie_api
 
