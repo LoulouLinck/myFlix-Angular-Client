@@ -118,6 +118,7 @@ getMovies(): void {
       this.fetchApiData.addFavoriteMovie(movie._id).subscribe(
         () => {
           console.log('Movie added to favorites successfully.');
+          console.log(movie._id);
         },
         (error) => {
           console.error('Error adding movie to favorites:', error);
