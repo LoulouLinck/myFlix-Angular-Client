@@ -46,7 +46,7 @@ getMovies(): void {
 
   /**
    * Opens a dialog with genre details (genres-info-component).
-   * @param genre 
+   * @param genre
    */
   openGenreInfo(Genre: any): void {
     // console.log('Genre Object:', Genre);
@@ -72,11 +72,11 @@ getMovies(): void {
         }
       });
     }
-  
+
   /**
    * Opens a dialog with movie details (movie-info-component).
-   * @param title 
-   * @param description 
+   * @param title
+   * @param description
    */
   openMovieInfo(Title: string, Description: string): void {
     this.dialog.open(MovieInfoComponent, {
@@ -96,7 +96,7 @@ getMovies(): void {
     if (this.isMovieFavorite(movie)) {
       // deletes movie from favorites locally
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      user.favoriteMovies = user.favoriteMovies.filter((id: string) => id !== movie._id);
+      user.FavouriteMovies = user.FavouriteMovies.filter((id: string) => id !== movie._id);
       localStorage.setItem('user', JSON.stringify(user));
 
        // removes movie from favourites list on the backend server
@@ -111,9 +111,9 @@ getMovies(): void {
     } else {
       // adds movie to favourites locally
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      user.favoriteMovies.push(movie._id);
+      user.FavouriteMovies.push(movie._id);
       localStorage.setItem('user', JSON.stringify(user));
-  
+
       // Add movie to favourites in backend
       this.fetchApiData.addFavoriteMovie(movie._id).subscribe(
         () => {
@@ -124,11 +124,11 @@ getMovies(): void {
         }
       );
     }
-  
+
     // updates local 'isFavorite' property
     movie.isFavorite = !this.isMovieFavorite(movie);
   }
-  
+
   /**
    * Checks if a movie is in the user's favorites.
    * @param movie - The movie to check.
@@ -136,7 +136,8 @@ getMovies(): void {
    */
   isMovieFavorite(movie: any): boolean {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
-    return user.favoriteMovies && user.favoriteMovies.includes(movie._id);
+    return user.FavouriteMovies && user.FavouriteMovies.includes(movie._id);
   }
-  
+
 }
+
