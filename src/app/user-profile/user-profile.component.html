@@ -6,12 +6,12 @@
             <h1><span>{{userData.Username}}</span>'s profile </h1>
 <br>
             <h3>Favourite Movies</h3>
-            <div *ngIf="favoriteMovies.length === 0">
+            <div *ngIf="FavouriteMovies.length === 0">
                 <p>Your list is empty</p>
             </div>
         </div>
         <mat-list>
-            <mat-list-item *ngFor="let movie of favoriteMovies" class="image-container">
+            <mat-list-item *ngFor="let movie of FavouriteMovies" class="image-container">
                 <img matListItemAvatar src="{{movie.ImagePath}}" />
                 <span matListItemTitle>{{movie.Title}}</span>
             </mat-list-item>

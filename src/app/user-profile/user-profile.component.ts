@@ -18,7 +18,7 @@ import { formatDate } from '@angular/common';
 export class UserProfileComponent implements OnInit {
 
   user: any = {};
-  favoriteMovies: any[] = [];
+  FavouriteMovies: any[] = [];
 
   /**
    * Input data for the user profile.
@@ -56,10 +56,10 @@ export class UserProfileComponent implements OnInit {
       this.user.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
 
       this.fetchApiData.getAllMovies().subscribe((response: any) => {
-        if (this.user.favoriteMovies && Array.isArray(this.user.favoriteMovies)) {
-          this.favoriteMovies = response.filter((m: { _id: any }) => this.user.favoriteMovies.indexOf(m._id) >= 0);
+        if (this.user.FavouriteMovies && Array.isArray(this.user.FavouriteMovies)) {
+          this.FavouriteMovies = response.filter((m: { _id: any }) => this.user.FavouriteMovies.indexOf(m._id) >= 0);
         } else {
-          this.favoriteMovies = [];
+          this.FavouriteMovies = [];
         }
       });
     }, (error) => {
