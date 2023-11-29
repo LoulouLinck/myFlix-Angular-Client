@@ -55,11 +55,16 @@ export class UserProfileComponent implements OnInit {
       this.userData.Email = this.user.Email;
       this.user.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
 
-
       this.fetchApiData.getAllMovies().subscribe((response: any) => {
-        this.favoriteMovies = response.filter((m: { _id: any }) => this.user.FavoriteMovies.indexOf(m._id) >= 0)
-      })
-    })
+        if (this.user.favoriteMovies && Array.isArray(this.user.favoriteMovies)) {
+          this.favoriteMovies = response.filter((m: { _id: any }) => this.user.favoriteMovies.indexOf(m._id) >= 0);
+        } else {
+          this.favoriteMovies = [];
+        }
+      });
+    }, (error) => {
+      console.error('Error fetching user data', error);
+    });
   }
 
   /**
