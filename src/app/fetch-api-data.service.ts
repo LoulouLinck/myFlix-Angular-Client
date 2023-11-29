@@ -151,7 +151,7 @@ export class FetchApiDataService {
       })
       .pipe(
         map(this.extractResponseData),
-        map((data) => data.FavoriteMovies),
+        map((data) => data.favoriteMovies),
         catchError(this.handleError)
       );
   }
@@ -187,7 +187,7 @@ export class FetchApiDataService {
    */
   isFavoriteMovie(MovieID: string): boolean {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
-    return user.FavoriteMovies.indexOf(MovieID) >= 0;
+    return user.favoriteMovies.indexOf(MovieID) >= 0;
   }
 
   /**
@@ -232,11 +232,11 @@ export class FetchApiDataService {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     const token = localStorage.getItem('token');
 
-    const index = user.FavoriteMovies.indexOf(MovieID);
+    const index = user.favoriteMovies.indexOf(MovieID);
     console.log(index);
     if (index > -1) {
       // only splice array when item is found
-      user.FavoriteMovies.splice(index, 1); // 2nd parameter means remove one item only
+      user.favoriteMovies.splice(index, 1); // 2nd parameter means remove one item only
     }
     localStorage.setItem('user', JSON.stringify(user));
     return this.http
