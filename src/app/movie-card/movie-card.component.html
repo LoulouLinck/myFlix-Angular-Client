@@ -1,43 +1,32 @@
 <app-navigation></app-navigation>
 
-
 <div class="movie-grid">
-    <div *ngFor="let movie of movies" class="movie-card">
-      <mat-card role="article">
-        <mat-card-header>
-        <mat-card-title class="movieTitle">{{movie.Title}}</mat-card-title>
-            <mat-card-subtitle class="directorName">Directed by {{movie.Director.Name}}</mat-card-subtitle>
-        </mat-card-header>
-        <div class="movie-image-container">
-        <img src={{movie.ImagePath}} alt= {{movie.Title}} class="movieImage" />
-    </div>
-        <mat-card-actions class="actions">
-
-            <button
-                mat-button
-                (click)="openGenreInfo(movie.Genre)"
-                color="primary"
-                aria-label="View Director Information"
-            >
-                Genre
-            </button>
-            <button
-                mat-button
-                (click)="openDirectorInfo(movie.Director)"
-                color="primary"
-                aria-label="View Genres"
-            >
-                Director
-            </button>
-            <button
-                mat-button
-                (click)="openMovieInfo(movie.Title, movie.Description)"
-                color="primary"
-                aria-label="View Synopsis"
-            >
-                Synopsis
+  <div *ngFor="let movie of movies" class="movie-card">
+    <mat-card role="article">
+      <mat-card-header>
+        <mat-card-title class="movieTitle">{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle class="directorName"
+          >Directed by {{ movie.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <div class="movie-image-container">
+        <img
+          src="{{ movie.ImagePath }}"
+          alt="{{ movie.Title }}"
+          class="movieImage"
+        />
+      </div>
+      <mat-card-actions class="actions">
+        <button
+          mat-button
+          (click)="openGenreInfo(movie.Genre)"
+          color="primary"
+          aria-label="View Director Information"
+        >
+          Genre
         </button>
         <button
+<<<<<<< HEAD
             mat-icon-button
             [ngClass]="{ favorite: isMovieFavorite(movie) }"
              (click)="toggleFavorite(movie)"
@@ -48,7 +37,34 @@
             </mat-icon>
             </button>
         </mat-card-actions>
+=======
+          mat-button
+          (click)="openDirectorInfo(movie.Director)"
+          color="primary"
+          aria-label="View Genres"
+        >
+          Director
+        </button>
+        <button
+          mat-button
+          (click)="openMovieInfo(movie.Title, movie.Description)"
+          color="primary"
+          aria-label="View Synopsis"
+        >
+          Synopsis
+        </button>
+        <button
+          mat-icon-button
+          [ngClass]="{ favorite: isMovieFavorite(movie) }"
+          (click)="toggleFavorite(movie)"
+          aria-label="Add to Favorites"
+        >
+          <mat-icon style="color: red">
+            {{ isMovieFavorite(movie) ? "favorite" : "favorite_border" }}
+          </mat-icon>
+        </button>
+      </mat-card-actions>
+>>>>>>> c5516f16d55962702f1b9c217d0ab46540b99fe9
     </mat-card>
+  </div>
 </div>
-</div>
-
