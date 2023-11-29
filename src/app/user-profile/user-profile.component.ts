@@ -57,7 +57,7 @@ export class UserProfileComponent implements OnInit {
 
 
       this.fetchApiData.getAllMovies().subscribe((response: any) => {
-        this.favoriteMovies = response.filter((m: { _id: any }) => this.user.FavoriteMovies.indexOf(m._id) >= 0)
+        this.favoriteMovies = response.filter((m: { _id: any }) => this.user.favoriteMovies.indexOf(m._id) >= 0)
       })
     })
   }

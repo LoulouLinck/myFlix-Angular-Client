@@ -42,7 +42,7 @@
              (click)="toggleFavorite(movie)"
              aria-label="Add to Favorites"
             >
-            <mat-icon>favorite_border</mat-icon>
+            <mat-icon [style.color]="isMovieFavorite(movie) ? 'red' : '#fff'">favorite_border</mat-icon>
             </button>
         </mat-card-actions>
     </mat-card>

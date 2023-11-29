@@ -96,7 +96,7 @@ getMovies(): void {
     if (this.isMovieFavorite(movie)) {
       // deletes movie from favorites locally
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      user.FavoriteMovies = user.FavoriteMovies.filter((id: string) => id !== movie._id);
+      user.favoriteMovies = user.favoriteMovies.filter((id: string) => id !== movie._id);
       localStorage.setItem('user', JSON.stringify(user));
 
        // removes movie from favourites list on the backend server
@@ -111,7 +111,7 @@ getMovies(): void {
     } else {
       // adds movie to favourites locally
       const user = JSON.parse(localStorage.getItem('user') || '{}');
-      user.FavoriteMovies.push(movie._id);
+      user.favoriteMovies.push(movie._id);
       localStorage.setItem('user', JSON.stringify(user));
   
       // Add movie to favourites in backend
@@ -136,7 +136,7 @@ getMovies(): void {
    */
   isMovieFavorite(movie: any): boolean {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
-    return user.FavoriteMovies && user.FavoriteMovies.includes(movie._id);
+    return user.favoriteMovies && user.favoriteMovies.includes(movie._id);
   }
   
 }
