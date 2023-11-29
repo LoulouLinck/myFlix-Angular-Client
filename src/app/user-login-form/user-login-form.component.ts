@@ -59,7 +59,7 @@ loginUser(): void {
       // Logic for successful user login goes here!
       localStorage.setItem('user', JSON.stringify(data.user));
       localStorage.setItem('token', data.token);
-      // localStorage.setItem('Username', data.user.Username)
+      localStorage.setItem('Username', data.user.Username)
 
       this.router.navigate(['movies']);
       
