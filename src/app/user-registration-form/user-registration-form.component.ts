@@ -25,7 +25,7 @@ export class UserRegistrationFormComponent implements OnInit {
   /**
    * Input data for the user registration.
    */
-  @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
+  @Input() loginData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   /**
    * Constructor for the UserRegistrationFormComponent.
@@ -50,7 +50,7 @@ ngOnInit(): void {
 * Register a new user by sending the user data to the backend.
 */
 registerUser(): void {
-    this.fetchApiData.userRegistration(this.userData).subscribe((response) => {
+    this.fetchApiData.userRegistration(this.loginData).subscribe((response) => {
   // Logic for successful user registration
      this.dialogRef.close(); // This will close the modal on success!
      console.log(response)

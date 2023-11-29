@@ -3,7 +3,7 @@
 <div class="profile-container">
     <div class="info-container">
         <div class="info">
-            <h1><span>{{userData.Username}}</span>'s profile </h1>
+            <h1><span>{{loginData.Username}}</span>'s profile </h1>
 <br>
             <h3>Favourite Movies</h3>
             <div *ngIf="FavouriteMovies.length === 0">
@@ -24,22 +24,22 @@
 
 <mat-form-field>
     <mat-label> Username </mat-label>
-    <input matInput [(ngModel)]="userData.Username" type="text" name="Username">
+    <input matInput [(ngModel)]="loginData.Username" type="text" name="Username">
 </mat-form-field>
 
 <mat-form-field>
     <mat-label>Password</mat-label>
-    <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password" name="Password">
+    <input matInput [(ngModel)]="loginData.Password" type="password" placeholder="Password" name="Password">
 </mat-form-field>
 
 <mat-form-field>
     <mat-label>E-mail</mat-label>
-    <input matInput [(ngModel)]="userData.Email" type="email" name="Email">
+    <input matInput [(ngModel)]="loginData.Email" type="email" name="Email">
 </mat-form-field>
 
 <mat-form-field>
     <mat-label>Birthday</mat-label>
-    <input matInput [(ngModel)]="userData.Birthday" type="date" name="Birthday">
+    <input matInput [(ngModel)]="loginData.Birthday" type="date" name="Birthday">
 </mat-form-field>
 
 <br>

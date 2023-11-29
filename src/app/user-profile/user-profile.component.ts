@@ -23,7 +23,7 @@ export class UserProfileComponent implements OnInit {
   /**
    * Input data for the user profile.
    */
-  @Input() userData = { Name: '', Username: '', Password: '', Email: '', Birthday: '', };
+  @Input() loginData = { Name: '', Username: '', Password: '', Email: '', Birthday: '', };
 
   /**
    * Constructor for the UserProfileComponent.
@@ -51,8 +51,8 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getOneUser().subscribe((response: any) => {
       this.user = response;
-      this.userData.Username = this.user.Username;
-      this.userData.Email = this.user.Email;
+      this.loginData.Username = this.user.Username;
+      this.loginData.Email = this.user.Email;
       this.user.Birthday = formatDate(this.user.Birthday, 'yyyy-MM-dd', 'en-US', 'UTC+0');
 
       this.fetchApiData.getAllMovies().subscribe((response: any) => {
@@ -71,7 +71,7 @@ export class UserProfileComponent implements OnInit {
    * Edit the user's profile data.
    */
   editUser(): void {
-    this.fetchApiData.editUser(this.userData).subscribe((data) => {
+    this.fetchApiData.editUser(this.loginData).subscribe((data) => {
       localStorage.setItem('user', JSON.stringify(data));
       localStorage.setItem('Username', data.Username);
       // console.log(data);
