@@ -39,11 +39,17 @@
         </button>
         <button
             mat-icon-button
-            [ngClass]="{ 'favorite': isMovieFavorite(movie) }"
+            [ngClass]="{ favorite: isMovieFavorite(movie) }"
              (click)="toggleFavorite(movie)"
              aria-label="Add to Favorites"
             >
+<<<<<<< Updated upstream
             <mat-icon>favorite_border</mat-icon>
+=======
+            <mat-icon style="color: red">
+                {{ isMovieFavorite(movie) ? "favorite" : "favorite_border"}}
+            </mat-icon>
+>>>>>>> Stashed changes
             </button>
         </mat-card-actions>
     </mat-card>
